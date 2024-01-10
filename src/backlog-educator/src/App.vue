@@ -1,19 +1,13 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue';
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-  },
-};
+<script setup>
+import Header from './components/AppHeader.vue';
+import HomePage from './components/HomePage.vue';
 </script>
-
+<template>
+  <div class="container-fluid">
+    <Header />
+    <HomePage />
+  </div>
+</template>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
