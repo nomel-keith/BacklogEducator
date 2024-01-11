@@ -1,10 +1,12 @@
 <template>
-  <h1>Courses</h1>
-  <div v-for="course in courses" :key="course.id" class="course">
-    <router-link :to="{ name: 'CourseDetail', params: { id: course.id}}">
-      <h2>{{ course.title}}</h2>
-    </router-link>
-  </div>
+  <v-row>
+    <v-col
+      v-for="course in courses" :key="course.id" class="course">
+      <v-card :to="{ name: 'CourseDetail', params: { id: course.id}}">
+        {{ course.title}}
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
