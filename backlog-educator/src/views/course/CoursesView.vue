@@ -17,11 +17,9 @@ export default {
 <template>
   <h1>Courses A</h1>
   <Draggable v-model="courses" group="course" @start="drag=true" @end="drag=false">
-    <div v-for="course in courses" :key="course.id" class="course">
-      <router-link :to="{ name: 'CourseDetail', params: { id: course.id}}">
-        <h2>{{ course.title}}</h2>
-      </router-link>
-    </div>
+      <v-card :to="{ name: 'CourseDetail', params: { id: course.id}}">
+        {{ course.title}}
+      </v-card>
   </Draggable>
 </template>
 
