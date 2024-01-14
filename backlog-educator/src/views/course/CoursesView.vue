@@ -1,13 +1,6 @@
-<template>
-  <h1>Courses</h1>
-  <div v-for="course in courses" :key="course.id" class="course">
-    <router-link :to="{ name: 'CourseDetail', params: { id: course.id}}">
-      <h2>{{ course.title}}</h2>
-    </router-link>
-  </div>
-</template>
-
 <script>
+import Draggable from 'vuedraggable'
+
 export default {
   data() {
     return {
@@ -20,6 +13,17 @@ export default {
   },
 };
 </script>
+
+<template>
+  <h1>Courses A</h1>
+  <Draggable v-model="courses" group="course" @start="drag=true" @end="drag=false">
+    <div v-for="course in courses" :key="course.id" class="course">
+      <router-link :to="{ name: 'CourseDetail', params: { id: course.id}}">
+        <h2>{{ course.title}}</h2>
+      </router-link>
+    </div>
+  </Draggable>
+</template>
 
 <style>
   .course h2 {
